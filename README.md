@@ -1,7 +1,5 @@
 LIBMF++ is a library for large-scale sparse matrix factorization. For the
-optimization problem it solves, please refer to [1]. this library is based on LIBMF.
-
-
+optimization problem it solves, please refer to [1]. This library is based on LIBMF.
 
 Table of Contents
 =================
