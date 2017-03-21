@@ -35,44 +35,6 @@ Note: If the values in the test set are unknown, please write dummy zeros.
 
 
 
-Model Format
-============
-
-    LIBMF++ factorizes a training matrix `R' into a k-by-m matrix `P' and a
-    k-by-n matrix `Q' such that `R' is approximated by P'Q. After the training
-    process, the two factor matrices `P' and `Q' are stored into a model file.
-    The file starts with a header including the following parameters:
-
-        `m': the number of rows in the training matrix,
-        `n': the number of columns in the training matrix,
-        `k': the number of latent factors,
-        `b': the average of all elements in the training matrix.
-
-    From the 5th line, the columns of `P' and `Q' are stored line by line.
-    For each line, there are two leading tokens followed by the values of a
-    column.  The first token is the name of the stored column, and the second
-    word indicates the type of values. If the second word is `T', the column is
-    a real-valued vector. Otherwise, all values in the column are NaN. For
-    example, if
-
-        P = [1 NaN 2; 3 NaN 4; 5 NaN 6], Q = [-1, -2; -3, -4; -5; -6],
-
-    and the value `b' is 0.5, the content of the model file is:
-
-        ========================model file========================
-        m 3
-        n 2
-        k 3
-        b 0.5
-        p1 T 1 3 5
-        p2 F 0 0 0
-        p3 T 2 4 6
-        q1 T -1 -3 -5
-        q2 T -2 -4 -6
-        =========================================================
-
-
-
 Command Line Usage
 ==================
 
