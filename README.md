@@ -1,5 +1,5 @@
-LIBMF is a library for large-scale sparse matrix factorization. For the
-optimization problem it solves, please refer to [2].
+LIBMF++ is a library for large-scale sparse matrix factorization. For the
+optimization problem it solves, please refer to [1]. this library is based on LIBMF.
 
 
 
@@ -13,7 +13,6 @@ Table of Contents
 - Examples
 - Library Usage
 - SSE, AVX, and OpenMP
-- Building Windows and Mac Binaries
 - References
 
 
@@ -25,11 +24,6 @@ Installation
 
   Type `make' to build `mf-train' and `mf-precict.'
 
-- Windows & Mac
-    
-  See `Building Windows and Mac Binaries' to compile. For Windows, pre-built
-  binaries are available in the directory `windows.'
-
 
 
 Data Format
@@ -39,8 +33,6 @@ The data format is:
 
     <row_idx> <col_idx> <value>
 
-See an example `bigdata.tr.txt.'
-
 Note: If the values in the test set are unknown, please write dummy zeros.
 
 
@@ -48,7 +40,7 @@ Note: If the values in the test set are unknown, please write dummy zeros.
 Model Format
 ============
 
-    LIBMF factorizes a training matrix `R' into a k-by-m matrix `P' and a
+    LIBMF++ factorizes a training matrix `R' into a k-by-m matrix `P' and a
     k-by-n matrix `Q' such that `R' is approximated by P'Q. After the training
     process, the two factor matrices `P' and `Q' are stored into a model file.
     The file starts with a header including the following parameters:
@@ -336,66 +328,12 @@ following lines in Makefile.
 Note: Please always run `make clean all' if these flags are changed.
 
 
-
-Building Windows and Mac and Binaries
-=====================================
-
--   Windows
-
-    Windows binaries are in the directory `windows.' To build them via
-    command-line tools of Microsoft Visual Studio, use the following steps:
-
-    1. Open a DOS command box (or Developer Command Prompt for Visual Studio)
-    and go to libmf directory. If environment variables of VC++ have not been
-    set, type
-
-    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat"
-
-    You may have to modify the above command according which version of VC++
-    or where it is installed.
-
-    2. Type
-
-    nmake -f Makefile.win clean all
-
-    3. (optional) To build shared library mf_c.dll, type
-
-    nmake -f Makefile.win lib
-
--   Mac
-    
-    To complie LIBMF on Mac, a GCC complier is required, and users need to
-    slightly modify the Makefile. The following instructions are tested with
-    GCC 4.9.
-
-    1. Set the complier path to your GCC complier. For example, the first
-       line in the Makefile can be
-   
-       CXX = g++-4.9
-
-    2. Remove `-march=native' from `CXXFLAGS.' The second line in the Makefile
-       Should be
-
-       CXXFLAGS = -O3 -pthread -std=c++0x
-
-    3. If AVX is enabled, we add `-Wa,-q' to the `CXXFLAGS,' so the previous
-       `CXXFLAGS' becomes
-
-       CXXFLAGS = -O3 -pthread -std=c++0x -Wa,-q
-  
-
-
 References
 ==========
 
-[1] W.-S. Chin, Y. Zhuang, Y.-C. Juan, and C.-J. Lin. A Fast Parallel
-Stochastic Gradient Method for Matrix Factorization in Shared Memory Systems.
-ACM TIST, 2015. (www.csie.ntu.edu.tw/~cjlin/papers/libmf/libmf_journal.pdf)
-
-[2] W.-S. Chin, Y. Zhuang, Y.-C. Juan, and C.-J. Lin. A learning-rate schedule
-for stochastic gradient methods to matrix factorization. PAKDD, 2015.
+[1] Wei F, Guo H, Cheng S, et al. AALRSMF: An Adaptive Learning Rate Schedule for Matrix Factorization[C]//Asia-Pacific Web Conference. Springer International Publishing, 2016: 410-413.
 
 
 For any questions and comments, please email:
 
-    cjlin@csie.ntu.edu.tw
+    enable@mail.ustc.edu.cn
