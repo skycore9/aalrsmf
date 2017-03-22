@@ -819,7 +819,7 @@ shared_ptr<mf_model> fpsg(
             cout.width(4);
             cout << iter;
             cout.width(20);
-            cout << (float)(end - begin) / CLOCKS_PER_SEC;
+            cout << (float)(end - begin) / (10 * CLOCKS_PER_SEC);
             cout.width(10);
             cout << fixed << setprecision(4) << tr_rmse;
             if(va->nnz != 0)
