@@ -1,4 +1,4 @@
-CXX = g++-6
+CXX = g++
 CXXFLAGS = -O3 -pthread -std=c++0x -march=native -Wall
 SHVER = 1
 
