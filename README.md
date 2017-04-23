@@ -103,8 +103,3 @@ References
 ==========
 
 [1] Wei F, Guo H, Cheng S, et al. AALRSMF: An Adaptive Learning Rate Schedule for Matrix Factorization[C]//Asia-Pacific Web Conference. Springer International Publishing, 2016: 410-413.
-
-
-For any questions and comments, please email:
-
-    enable@mail.ustc.edu.cn
